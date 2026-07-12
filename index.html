@@ -3,158 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Northern Calling</title>
+
+<title>Northern Calling | Tours & Rent A Car</title>
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f8f9fa;
-color:#333;
+    color:#333;
+    background:#f8f9fa;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.8);
+    padding:18px;
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .hero{
-height:90vh;
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
 .hero h1{
-font-size:4rem;
-margin-bottom:15px;
+    font-size:80px;
+    margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.3rem;
-margin-bottom:25px;
+    font-size:24px;
+    margin-bottom:30px;
 }
 
 .btn{
-background:#D4A017;
-color:white;
-padding:15px 30px;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
+    display:inline-block;
+    padding:15px 35px;
+    background:#D4A017;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
 }
 
 section{
-padding:70px 10%;
+    padding:80px 10%;
 }
 
-h2{
-text-align:center;
-margin-bottom:40px;
-font-size:2rem;
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#1B4332;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 0 15px rgba(0,0,0,.1);
-text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1B4332;
+}
+
+.tour-card{
+    border-top:5px solid #D4A017;
+}
+
+.contact{
+    text-align:center;
+    background:#1B4332;
+    color:white;
+}
+
+.contact h2{
+    margin-bottom:20px;
 }
 
 footer{
-background:#1B4332;
-color:white;
-padding:30px;
-text-align:center;
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
-</style>
 
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+nav ul{
+    gap:15px;
+    font-size:14px;
+}
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="hero">
+<nav>
+<ul>
+<li>#home</li>
+<li>#destinations</li>
+<li>#tours</li>
+<li>#carsRent A Car</a></li>
+<li>#contact</li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
 <div>
+
 <h1>Northern Calling</h1>
+
 <p>Answer The Call Of The Mountains</p>
 
 https://wa.me/923035618634
 Book Your Adventure
 </a>
-</div>
-</div>
 
-<section>
-<h2>Popular Destinations</h2>
+</div>
+</section>
 
-<div class="cards">
+<section id="destinations">
+
+<h2 class="section-title">Popular Destinations</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>Hunza Valley</h3>
-<p>Experience stunning mountains, Attabad Lake and rich local culture.</p>
+<p>Attabad Lake, Passu Cones, Eagles Nest and rich local culture.</p>
 </div>
 
 <div class="card">
 <h3>Skardu</h3>
-<p>Gateway to the world's highest peaks and breathtaking landscapes.</p>
+<p>Explore Shangrila, Upper Kachura, Shigar and majestic landscapes.</p>
 </div>
 
 <div class="card">
 <h3>Fairy Meadows</h3>
-<p>Witness unforgettable views of Nanga Parbat.</p>
+<p>Experience unforgettable views of Nanga Parbat.</p>
 </div>
 
 <div class="card">
 <h3>Deosai Plains</h3>
-<p>Explore one of the world's highest plateaus.</p>
+<p>Visit one of the world's highest plateaus and wildflower fields.</p>
 </div>
 
 </div>
+
 </section>
 
-<section>
-<h2>Why Travel With Us?</h2>
+<section id="tours">
 
-<div class="cards">
+<h2 class="section-title">Featured Tours</h2>
+
+<div class="grid">
+
+<div class="card tour-card">
+<h3>5 Days Hunza Tour</h3>
+<p>Comfortable transport, hotels and guided sightseeing.</p>
+</div>
+
+<div class="card tour-card">
+<h3>7 Days Skardu Adventure</h3>
+<p>Explore lakes, valleys and mountain viewpoints.</p>
+</div>
+
+<div class="card tour-card">
+<h3>10 Days Northern Explorer</h3>
+<p>Hunza, Skardu, Deosai and Khunjerab Pass in one trip.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="cars">
+
+<h2 class="section-title">Rent A Car Services</h2>
+
+<div class="grid">
 
 <div class="card">
-✅ Professional Guides
+<h3>Corolla</h3>
+<p>Perfect for family trips and executive travel.</p>
 </div>
 
 <div class="card">
-✅ Comfortable Transport
+<h3>Honda Civic</h3>
+<p>Comfort and style for premium journeys.</p>
 </div>
 
 <div class="card">
-✅ Custom Packages
+<h3>Prado</h3>
+<p>Luxury SUV for Northern Pakistan adventures.</p>
 </div>
 
 <div class="card">
-✅ 24/7 Support
+<h3>4x4 Jeeps</h3>
+<p>Ideal for Deosai, Fairy Meadows and off-road routes.</p>
 </div>
 
 </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Let's Plan Your Next Adventure</h2>
+
+<p>WhatsApp: +92 303 5618634</p>
+
+<br>
+
+wa.me/923035618634" class="btn">
+Contact on WhatsApp
+</a>
+
 </section>
 
 <footer>
-<h3>Northern Calling</h3>
-<p>Adventure Tours Across Northern Pakistan</p>
-<p>WhatsApp: +92 303 5618634</p>
+© 2026 Northern Calling | Tours & Rent A Car Pakistan
 </footer>
+
+https://wa.me/923035618634
 
 </body>
 </html>
