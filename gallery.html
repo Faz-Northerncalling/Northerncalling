@@ -1,54 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Northern Calling Gallery</title>
-<style>
-body{
-    background:#0d1115;
-    color:white;
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:40px;
-}
-h1{
-    text-align:center;
-    color:#d9a832;
-}
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-    gap:20px;
-}
-.gallery img{
-    width:100%;
-    border-radius:12px;
-}
-</style>
-</head>
-<body>
-
-<h1 id="title">Gallery</h1>
-
-<div class="gallery" id="gallery"></div>
-
 <script>
-const params = new URLSearchParams(window.location.search);
-const destination = params.get("destination") || "hunza";
+document.getElementById("title").innerText = "HUNZA";
 
-document.getElementById("title").innerText =
-destination.toUpperCase();
-
-const gallery = document.getElementById("gallery");
-
-
-gallery.innerHTML = `
-<img src="https://images.pexels.com71619/pexels-photo-1271619.jpeg
-<img src="https://images.pexels.com/photosexels-photo-3617500.jpeg
-.pexels.com/photos/1421903/pexels-photo-1421903.jpeg" alt="">
+document.getElementById("gallery").innerHTML = `
+https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=800
+<imgs://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=800
+<img srcimages.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=800
 `;
-
 </script>
-
-</body>
-</html>
