@@ -1,10 +1,52 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gallery</title>
+<meta charset="utf-8">
+<title>Northern Calling Gallery</title>
+<style>
+body{
+    background:#0d1115;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:40px;
+}
+h1{
+    text-align:center;
+    color:#d9a832;
+}
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:20px;
+}
+.gallery img{
+    width:100%;
+    border-radius:12px;
+}
+</style>
 </head>
 <body>
-<h1>Gallery Test Page</h1>
+
+<h1 id="title">Gallery</h1>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const destination = params.get("destination") || "hunza";
+
+document.getElementById("title").innerText =
+destination.toUpperCase();
+
+const gallery = document.getElementById("gallery");
+
+for(let i=1;i<=20;i++){
+    gallery.innerHTML += `
+        <img src="https://picsum.photos/600m=${i}
+    `;
+}
+</script>
+
 </body>
 </html>
