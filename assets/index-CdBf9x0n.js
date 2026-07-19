@@ -1,23 +1,3 @@
-(function() {
-  function injectKey() {
-    const form = document.querySelector('form[action*="web3forms"]');
-    if (form) {
-      let keyInput = form.querySelector('input[name="access_key"]');
-      if (!keyInput) {
-        keyInput = document.createElement('input');
-        keyInput.type = 'hidden';
-        keyInput.name = 'access_key';
-        form.appendChild(keyInput);
-      }
-      keyInput.value = '4219339e-1819-435c-942c-99eb79d2ad82';
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectKey);
-  } else {
-    injectKey();
-  }
-})();
 (function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const l of document.querySelectorAll('link[rel="modulepreload"]'))r(l);new MutationObserver(l=>{for(const o of l)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function n(l){const o={};return l.integrity&&(o.integrity=l.integrity),l.referrerPolicy&&(o.referrerPolicy=l.referrerPolicy),l.crossOrigin==="use-credentials"?o.credentials="include":l.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(l){if(l.ep)return;l.ep=!0;const o=n(l);fetch(l.href,o)}})();var Ys={exports:{}},nl={},Gs={exports:{}},L={};/**
  * @license React
  * react.production.min.js
