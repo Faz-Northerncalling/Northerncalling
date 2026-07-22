@@ -55,49 +55,15 @@ u.jsxs("a",{href:`https://wa.me/${Bo[0].replace(/[^\d]/g,"")}`,target:"_blank",r
 u.jsxs("a",{href:`https://wa.me/${Bo[1].replace(/[^\d]/g,"")}`,target:"_blank",rel:"noreferrer",className:"flex items-center justify-center gap-2 py-3 rounded-lg bg-forest-600 text-white hover:bg-forest-500 transition-colors",children:[u.jsx(K.WhatsApp,{className:"w-5 h-5"})," WhatsApp ",Bo[1]]})
 ]})
 ]}),u.jsxs("div",{className:"grid sm:grid-cols-2 gap-6",children:[u.jsxs("div",{className:"glass rounded-2xl border border-white/10 p-6",children:[u.jsx(K.Mail,{className:"w-6 h-6 text-gold-300 mb-3"}),u.jsx("h4",{className:"text-white font-medium mb-1",children:"Email"}),u.jsx("p",{className:"text-sm text-ink-300",children:"support.northerncalling@gmail.com"})]}),u.jsxs("div",{className:"glass rounded-2xl border border-white/10 p-6",children:[u.jsx(K.MapPin,{className:"w-6 h-6 text-gold-300 mb-3"}),u.jsx("h4",{className:"text-white font-medium mb-1",children:"Base"}),u.jsx("p",{className:"text-sm text-ink-300",children:"Islamabad · Serving all Northern Areas"})]})]})]})]})]})]})}function Qf(){return u.jsx("footer",{className:"bg-ink-950 border-t border-white/10 py-14",children:u.jsxs("div",{className:"max-w-7xl mx-auto px-6",children:[u.jsxs("div",{className:"grid md:grid-cols-3 gap-10 mb-10",children:[u.jsxs("div",{children:[u.jsxs("div",{className:"flex items-center gap-3 mb-4",children:[u.jsx("span",{className:"grid place-items-center w-10 h-10 rounded-full border border-gold-400/40 text-gold-300",children:u.jsx(K.Mountain,{className:"w-5 h-5"})}),u.jsx("span",{className:"font-display text-xl text-white",children:"Northern Calling"})]}),u.jsx("p",{className:"text-sm text-ink-400 leading-relaxed max-w-xs",children:"Premium tourism and transport across the northern mountains of Pakistan. Your journey, your way."})]}),u.jsxs("div",{children:[u.jsx("h4",{className:"text-xs tracking-widest uppercase text-gold-300 mb-4",children:"Explore"}),u.jsx("ul",{className:"space-y-2",children:$o.map(e=>u.jsx("li",{children:u.jsx("a",{href:e.href,className:"text-sm text-ink-300 hover:text-white transition-colors",children:e.label})},e.href))})]}),u.jsxs("div",{children:[u.jsx("h4",{className:"text-xs tracking-widest uppercase text-gold-300 mb-4",children:"Reach us"}),u.jsx("ul",{className:"space-y-2",children:Bo.slice(0,3).map(e=>u.jsx("li",{children:u.jsxs("a",{href:`tel:${e.replace(/\s/g,"")}`,className:"text-sm text-ink-300 hover:text-white transition-colors flex items-center gap-2",children:[u.jsx(K.Phone,{className:"w-3.5 h-3.5"}),e]})},e))})]})]}),u.jsxs("div",{className:"pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4",children:[u.jsxs("p",{className:"text-xs text-ink-400",children:["© ",new Date().getFullYear()," Northern Calling. All rights reserved."]}),u.jsx("p",{className:"text-xs text-ink-400 font-display italic",children:"Your Journey. Your Way."})]})]})})}function Kf(){return Df(),u.jsxs("div",{className:"min-h-screen bg-ink-950",children:[u.jsx(Uf,{}),u.jsxs("main",{children:[u.jsx(Af,{}),u.jsx($f,{}),u.jsx(Bf,{}),u.jsx(Vf,{}),u.jsx(Wf,{}),u.jsx(Hf,{})]}),u.jsx(Qf,{})]})}oc(document.getElementById("root")).render(u.jsx(je.StrictMode,{children:u.jsx(Kf,{})}));
-;window.addEventListener("load", function() {
-  function bypassReactForm() {
-    // Find any button inside a form containing your fields
-    const targetForm = Array.from(document.querySelectorAll('form')).find(f => 
-      f.innerHTML.includes('tour type') || f.innerHTML.includes('phone number')
-    );
-    
-    if (!targetForm) return;
-    
-    const btn = targetForm.querySelector('button, input[type="submit"]');
-    if (btn && !btn.dataset.hooked) {
-      btn.dataset.hooked = "true";
-      
-      // Hijack the click entirely
-      btn.addEventListener('click', function(e) {
-        // Collect all input data on the fly
-        const formData = new FormData();
-        formData.append("access_key", "4219339e-1819-435c-942c-99eb79d2ad82");
-        
-        // Find inputs by checking their names or labels nearby
-        targetForm.querySelectorAll('input, textarea, select').forEach(el => {
-          if (el.name) {
-            formData.append(el.name, el.value);
-          }
-        });
 
-        // Directly ship it to Web3Forms via background request
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            alert("Thank you! Your message has been sent.");
-            targetForm.reset();
-          }
-        })
-        .catch(err => console.log("Web3Forms backup sent."));
-      }, true); // The 'true' forces our script to run BEFORE React's internal code blocks it
-    }
+
+document.addEventListener("submit", function (e) {
+  var form = e.target;
+  if (form && form.tagName === "FORM" && !form.querySelector('input[name="access_key"]')) {
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "access_key";
+    input.value = "4219339e-1819-435c-942c-99eb79d2ad82";
+    form.appendChild(input);
   }
-
-  bypassReactForm();
-  setInterval(bypassReactForm, 1000); // Continuous check for dynamic rendering
-});
+}, true);
